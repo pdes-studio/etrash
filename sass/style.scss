@@ -1,0 +1,526 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rubik', sans-serif;}
+
+$cor-principal: #06B552;
+$preto: #212121;
+$cinza: gray;
+$branco: #fff;
+
+body{
+    background: $cinza;
+    overflow-x: hidden;
+}
+
+.mobile-device{
+    height: 720px;
+    width: 360px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    display: block;
+    background: url(../img/mapa-2.png) no-repeat;
+    background-color: #f1f3f4;
+    background-size: cover;
+    position: absolute;
+    padding-bottom: 10px;
+}
+
+[data-screen="1"] .info-ponto{
+    visibility: hidden;
+    transform: translate3d(0,100px,0);
+    z-index: 1;
+}
+
+[data-screen="1"].act{
+    display: block;
+}
+
+[data-screen="1"]{
+    display: none;
+}
+
+
+[data-screen="1"] .info-ponto.act{
+    visibility: visible;
+    transform: translate3d(0,0,0);
+    transition: .3s;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.android-bar{
+    height: 24px;
+    background: url(../img/android-bar.svg) no-repeat;
+}
+
+.menu{
+    background: $preto;
+    display: flex;
+    z-index: 1;
+    position: relative;
+    padding: 12px 15px;
+    color: $branco;
+    justify-content: space-between;
+
+    h1{
+        font-size: 19px;
+    }
+    .btn-menu{
+        padding-top: 4px;
+        cursor: pointer;
+        z-index: 3;
+        span{
+            display: block;
+            height: 2px;
+            width: 18px;
+            border-radius: 10px;
+            background: currentColor;
+            
+            &::after, &::before{
+                content:'';
+                display: block;
+                height: 2px;
+                width: 24px;
+                margin: 7px auto;
+                position: absolute;
+                background: currentColor;
+                border-radius: 10px;
+            }
+            &::after{
+                margin-top: 14px;
+            }
+    }
+    
+        
+    }
+
+    .icon{
+        height: 24px;
+        width: 24px;
+        background: url(../img/report-icon.svg);
+        background-size: 24px;
+        background-color: transparent;
+    }
+
+}
+
+.icon{
+    height: 36px;
+    width: 36px;
+    background-color: $cinza;
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    border-radius: 100%;
+    cursor: pointer;
+    &.-horario{
+        background-image: url(../img/horario-icon.svg);
+    }
+    &.-fav{
+        background-image: url(../img/fav-icon.svg);
+    }
+}
+
+ 
+
+.info-ponto{
+    height: 110px;
+    width: 100%;
+    padding: 10px 20px;
+    position: absolute;
+    background: $preto;
+    color: $branco;
+    top: 440px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+
+    .cta > *{
+        float: right;
+    }
+
+    span{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    p{ 
+        font-size: 12px; 
+        line-height: 1.5em; 
+        max-width: 180px;
+        margin-bottom: 10px;
+    }
+    
+    button{
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 15px;
+        background: $branco;
+        cursor: pointer;
+    }
+
+    .back{
+        display: block;
+        height: 16px;
+        width: 16px;
+        background: url(../img/seta-icon.svg) no-repeat;
+        background-size: cover;
+        margin-top: 6px;
+        cursor: pointer;
+    }
+
+    .cta{
+        float: right;
+    }
+
+    .icon{
+        display: block;
+        float: none;
+        margin-bottom: 10px;
+    }
+}
+
+.features{
+    height: 170px;
+    width: 360px;
+    background: $preto;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+
+    span.i{
+        text-align: center;
+        display: block;
+        font-size: 12px;
+        padding: 10px 0;
+        background: #343434;
+        color: $branco;
+    }
+    
+
+    .search {
+        position: relative;
+
+        input{
+            display: block;
+            width: 320px;
+            background: #343434;
+            border: none;
+            padding: 10px 10px;
+            margin: 15px auto;
+        }
+
+        .icon{
+            display: block;
+            height: 20px;
+            width: 20px;
+            top: 7px;
+            right: 30px;
+            background: url(../img/search-icon.svg);
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+
+    .fav{
+        color: $branco;
+        display: flex;
+        width: 320px;
+        margin: 0 auto 0px auto;
+        padding: 10px 0;
+        border-top: 1px solid #343434;
+        justify-content: space-between;
+
+        .item{
+            display: flex;
+            font-size: 14px;
+
+            span{
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            p{ font-size: 12px; color: $cinza;}
+
+            .icon{
+                height: 36px;
+                width: 36px;
+                background-color: $cinza;
+                background-image: url(../img/fav-icon.svg);
+                background-repeat: no-repeat;
+                background-size: 28px;
+                background-position: center;
+                display: block;
+                border-radius: 100%;
+                margin-right: 8px;
+            }
+
+            div{
+                span{ font-weight: bold;}
+            }
+        }
+    }
+}
+
+.coleta{
+    height: 660px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+        
+        .usuario{
+            display: block;
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            background: #4285F4;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation-name: e1;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes e1{
+            from{ box-shadow: 0px 0px 0px 15px rgba(66,133,244,.24);}
+            to{ box-shadow: 0px 0px 0px 25px rgba(66,133,244,.04);}
+        }
+
+
+        .ponto{
+            height: 25px;
+            width: 25px;
+            background: url(../img/pontos-de-coleta.svg) no-repeat;
+            background-size: 14px;
+            background-color: $cinza;
+            background-position: center;
+            border-radius: 100%;
+            cursor: pointer;
+            position: absolute;
+            top: 220px;
+            left: 220px;
+            transition: .3s;
+
+            &.act{
+                height: 50px;
+                width: 50px;
+                top: 220px - 10;
+                left: 220px - 10;
+                background-size: 29px;
+                transform: rotate(180deg);
+                transition: all .3s ease-in-out;
+            }
+        }
+}
+
+
+.mobile-device[data-screen="2"]{
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    visibility: hidden;
+    background: $branco;
+    transition: all .5s;
+    &.act{ 
+        visibility: visible; 
+        margin-left: 0;
+        transition: .3s;
+        opacity: 1;
+    }
+
+    .info-ponto{
+        height: 110px;
+        width: 100%;
+        padding: 10px 20px;
+        position: absolute;
+        background: #212121;
+        color: $branco;
+        top: 23px;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+.info-horario{
+    display: block;
+    width: 320px;
+    margin: 120px 20px 20px 20px;
+
+    .titulo{
+        padding: 10px;
+        background: $cinza;
+        border-radius: 4px;
+        color: $branco;
+        display: flex;
+        align-items: center;
+
+        span{
+        font-size: 14px;
+        }
+
+        .t-lixo{
+            display: flex;
+            .icon{
+                height: 24px;
+                width: 24px;
+                margin-left: 10px;
+                background-color: $branco;
+            }
+        }
+
+    }
+
+    > div{ 
+        display: flex; 
+        justify-content: space-between;
+        padding: 0 10px 10px 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    p{
+        font-size: 12px;
+    }
+
+    .descricao{
+        font-size: 10px;
+    }
+
+    button{
+        display: block;
+        height: 48px;
+        width: 160px;
+        border: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin: 0 auto;
+        margin-top: 20px;
+        background: $preto;
+        color: $branco;
+    }
+
+}
+
+}
+
+.menu-lateral{
+    position: absolute;
+    height: 697px;
+    width: 360px;
+    top: 23px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 6;
+    visibility: hidden;
+    overflow: hidden;
+    &.act{
+        visibility: visible;
+        background: rgba(0,0,0,.4);
+        transition: .5s;
+        .wrapper{
+            margin-left: 0%;
+            transition: .7s ease-out;
+        }
+    }
+
+    .m-l-btn{
+        width: 24px;
+        height: 28px;
+        top: 15px;
+        right: 15px;
+        position: absolute;
+        cursor: pointer;
+        span{
+            display: block;
+            height: 2px;
+            width: 18px;
+            background: $cinza;
+            margin-bottom: 12px;
+            transform: rotate(-135deg);
+            border-radius: 10px;
+            z-index: 10;
+            margin: 0 auto;
+            &:after{
+                content: '';
+                display: block;
+                height: 2px;
+                width: 18ppx;
+                background: $cinza;
+                transform: rotate(270deg);
+                border-radius: 10px;
+            }
+        }
+        
+    }
+    
+    .wrapper{
+        display: block;
+        position: relative;
+        height: 697px;
+        width: 300px;
+        margin-left: -100%;
+        padding: 15px;
+        background: $branco;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 4px 0 10px 0px rgba(0,0,0,.24);
+
+        div{
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile{
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            img{
+                height: 60px;
+                width: 60px;
+                background: $preto;
+                display: block;
+                border-radius: 100%;
+            }
+            .p-info{
+                display: block;
+                margin-left: 15px;
+                span{ 
+                    display: block;
+                    font-size: 16px; 
+                    margin-bottom: 6px;}
+                p{ font-size: 14px;}
+            }
+        }
+
+        .link{
+            padding: 15px 0;
+            border-bottom: 1px solid #eaeaea;
+            .icon{
+                height: 24px;
+                width: 24px;
+                margin-right: 15px;
+            }
+        }
+
+
+
+    }
+}
+
+.-g{ background-color: #2ecc71 !important;}
+.-o{ background-color: #e67e22 !important;}
+.-b{ background-color: #3498db !important;}
+.-r{ background-color: #e74c3c !important;}
+.-hb{ background-color: #2c3e50 !important;}
+.-y{ background-color: #f1c40f !important;}
+.-r{ background-color: #e74c3c !important;}

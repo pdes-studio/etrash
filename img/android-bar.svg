@@ -1,0 +1,14 @@
+<svg id="Android_Sys_Bar" data-name="Android Sys Bar" xmlns="http://www.w3.org/2000/svg" width="360" height="24" viewBox="0 0 360 24">
+  <path id="background_rectangle" data-name="background rectangle" d="M0,0H360V24H0Z" fill="rgba(0,0,0,0.35)"/>
+  <rect id="rectangle" width="118" height="24" transform="translate(242)" fill="none"/>
+  <text id="sysbar_time" transform="translate(319 16)" fill="#fff" font-size="13" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">12:30</tspan></text>
+  <g id="sysbar_battery" transform="translate(-40 -378)">
+    <rect id="rectangle-2" data-name="rectangle" width="8" height="3" transform="translate(342 393)" fill="rgba(255,255,255,0.9)"/>
+    <rect id="rectangle-3" data-name="rectangle" width="8" height="3" transform="translate(342 390)" fill="rgba(255,255,255,0.9)"/>
+    <rect id="rectangle-4" data-name="rectangle" width="8" height="3" transform="translate(342 387)" fill="rgba(255,255,255,0.3)"/>
+    <rect id="rectangle-5" data-name="rectangle" width="8" height="3" transform="translate(342 384)" fill="rgba(255,255,255,0.3)"/>
+    <rect id="rectangle-6" data-name="rectangle" width="4" height="1" transform="translate(344 383)" fill="rgba(255,255,255,0.3)"/>
+  </g>
+  <path id="sysbar_status" d="M19.8,14h14V0Z" transform="translate(259.7 4)" fill="#fff" opacity="0.9"/>
+  <path id="sysbar_wifi" d="M8.8,14,17.6,3.1A14.04,14.04,0,0,0,0,3.1L8.8,14Z" transform="translate(259.5 4)" fill="#fff" opacity="0.9"/>
+</svg>
