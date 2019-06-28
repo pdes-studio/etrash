@@ -59,7 +59,7 @@ body {
 }
 
 .menu {
-  background: #212121;
+  background: #0072D6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,7 +84,7 @@ body {
 
 .menu .btn-menu span {
   display: block;
-  height: 2px;
+  height: 3px;
   width: 18px;
   border-radius: 10px;
   background: currentColor;
@@ -93,7 +93,7 @@ body {
 .menu .btn-menu span::after, .menu .btn-menu span::before {
   content: '';
   display: block;
-  height: 2px;
+  height: 3px;
   width: 24px;
   margin: 7px auto;
   position: absolute;
@@ -116,8 +116,7 @@ body {
 .icon {
   height: 36px;
   width: 36px;
-  background-color: gray;
-  background-size: 28px;
+  background-size: 20px;
   background-position: center;
   background-repeat: no-repeat;
   display: block;
@@ -138,7 +137,7 @@ body {
   width: 100%;
   padding: 10px 20px;
   position: absolute;
-  background: #212121;
+  background: #0072D6;
   color: #fff;
   top: 440px;
   z-index: 2;
@@ -193,12 +192,14 @@ body {
   display: block;
   float: none;
   margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0.36);
 }
 
 .features {
   height: 170px;
   width: 360px;
-  background: #212121;
+  background: #000910;
   position: absolute;
   bottom: 0;
   z-index: 2;
@@ -271,10 +272,10 @@ body {
 .features .fav .item .icon {
   height: 36px;
   width: 36px;
-  background-color: gray;
-  background-image: url(../img/fav-icon.svg);
+  background-color: #fff;
+  background-image: url(../img/fav-icon-b.svg);
   background-repeat: no-repeat;
-  background-size: 28px;
+  background-size: 20px;
   background-position: center;
   display: block;
   border-radius: 100%;
@@ -338,12 +339,19 @@ body {
   }
 }
 
+.coleta .cta .icon.-fav:hover {
+  background-image: url(../img/fav-icon-b.svg);
+  background-color: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
 .coleta .ponto {
   height: 25px;
   width: 25px;
   background: url(../img/pontos-de-coleta.svg) no-repeat;
   background-size: 14px;
-  background-color: gray;
+  background-color: #0072D6;
   background-position: center;
   border-radius: 100%;
   cursor: pointer;
@@ -352,6 +360,8 @@ body {
   left: 220px;
   -webkit-transition: .3s;
   transition: .3s;
+  -webkit-box-shadow: 0px 0px 4px rgba(66, 133, 244, 0.32);
+          box-shadow: 0px 0px 4px rgba(66, 133, 244, 0.32);
 }
 
 .coleta .ponto.act {
@@ -359,7 +369,7 @@ body {
   width: 50px;
   top: 210px;
   left: 210px;
-  background-size: 29px;
+  background-size: 30px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transition: all .3s ease-in-out;
@@ -389,7 +399,6 @@ body {
   width: 100%;
   padding: 10px 20px;
   position: absolute;
-  background: #212121;
   color: #fff;
   top: 23px;
   z-index: 2;
@@ -409,9 +418,10 @@ body {
 
 .mobile-device[data-screen="2"] .info-horario .titulo {
   padding: 10px;
-  background: gray;
+  background: #CCE3F8;
   border-radius: 4px;
-  color: #fff;
+  color: #000910;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,24 +461,30 @@ body {
 
 .mobile-device[data-screen="2"] .info-horario p {
   font-size: 12px;
+  color: #000910;
 }
 
 .mobile-device[data-screen="2"] .info-horario .descricao {
   font-size: 10px;
 }
 
-.mobile-device[data-screen="2"] .info-horario button {
+.mobile-device[data-screen="2"] .info-horario .check-in {
   display: block;
   height: 48px;
-  width: 160px;
+  width: 180px;
   border: none;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 30px;
   margin: 0 auto;
   margin-top: 20px;
-  background: #212121;
+  background: #0072D6;
   color: #fff;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
 }
 
 .menu-lateral {
@@ -508,9 +524,9 @@ body {
 
 .menu-lateral .m-l-btn span {
   display: block;
-  height: 2px;
+  height: 3px;
   width: 18px;
-  background: gray;
+  background: #0072D6;
   margin-bottom: 12px;
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
@@ -522,9 +538,9 @@ body {
 .menu-lateral .m-l-btn span:after {
   content: '';
   display: block;
-  height: 2px;
+  height: 3px;
   width: 18ppx;
-  background: gray;
+  background: #0072D6;
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
   border-radius: 10px;
@@ -560,15 +576,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 60px;
+  margin: 30px 0 30px 0;
 }
 
 .menu-lateral .wrapper .profile img {
   height: 60px;
   width: 60px;
-  background: #212121;
+  background: #000910;
   display: block;
   border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menu-lateral .wrapper .profile .p-info {
@@ -580,6 +598,8 @@ body {
   display: block;
   font-size: 16px;
   margin-bottom: 6px;
+  font-weight: bold;
+  color: #0072D6;
 }
 
 .menu-lateral .wrapper .profile .p-info p {
@@ -589,12 +609,15 @@ body {
 .menu-lateral .wrapper .link {
   padding: 15px 0;
   border-bottom: 1px solid #eaeaea;
+  font-size: 14px;
 }
 
 .menu-lateral .wrapper .link .icon {
   height: 24px;
   width: 24px;
   margin-right: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid #0072D6;
 }
 
 .-g {
