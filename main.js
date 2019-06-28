@@ -46,17 +46,11 @@ fechaMenu.addEventListener("click", actMenuLat);
 const checkIn = document.querySelector('.check-in');
 const checkTela = document.querySelector('.check-screen');
 
+
+
+
 checkIn.addEventListener("click", function(){
-    checkTela.classList.add('act');
-
-    const btnCancela = document.querySelector('.check-screen .cancel');
-
-btnCancela.addEventListener("click", function(){
-    checkTela.classList.toggle('act');
-});
-
-
-
+checkTela.classList.add('act');
 
 const btnConfirma = document.querySelector('.check-screen .confirm');
 const checkForm = document.querySelector('form');
@@ -71,7 +65,7 @@ btnConfirma.addEventListener("click", function(){
     checkModal.classList.add('act');
 
     if(checkModal.classList.contains('act')){
-        setTimeout( loadingFirst, 6000 );
+        setTimeout( loadingFirst, 4000 );
 
         function loadingFirst(){
             loading.classList.add('hide');
@@ -83,7 +77,7 @@ btnConfirma.addEventListener("click", function(){
 });
 
 if(sucess.classList != sucess.classList.contains('hide') ){
-    setTimeout(closingModal, 12000);
+    setTimeout(closingModal, 8000);
 
     function closingModal(){
         checkTela.classList.toggle('act');
