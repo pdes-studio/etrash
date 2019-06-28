@@ -42,3 +42,63 @@ function actMenuLat (){
 abreMenu.addEventListener("click", actMenuLat);
 fechaMenu.addEventListener("click", actMenuLat);
 
+
+const checkIn = document.querySelector('.check-in');
+const checkTela = document.querySelector('.check-screen');
+
+checkIn.addEventListener("click", function(){
+    checkTela.classList.add('act');
+
+    const btnCancela = document.querySelector('.check-screen .cancel');
+
+btnCancela.addEventListener("click", function(){
+    checkTela.classList.toggle('act');
+});
+
+
+
+
+const btnConfirma = document.querySelector('.check-screen .confirm');
+const checkForm = document.querySelector('form');
+const checkModal = document.querySelector('.modal');
+
+const loading = document.querySelector('.loading');
+const sucess = document.querySelector('.sucess');
+
+
+btnConfirma.addEventListener("click", function(){
+    checkForm.classList.add('hide');
+    checkModal.classList.add('act');
+
+    if(checkModal.classList.contains('act')){
+        setTimeout( loadingFirst, 6000 );
+
+        function loadingFirst(){
+            loading.classList.add('hide');
+            sucess.classList.remove('hide');
+        }
+
+    }
+
+});
+
+if(sucess.classList != sucess.classList.contains('hide') ){
+    setTimeout(closingModal, 12000);
+
+    function closingModal(){
+        checkTela.classList.toggle('act');
+        checkForm.classList.toggle('hide');
+        checkModal.classList.toggle('act');
+        loading.classList.toggle('hide');
+        sucess.classList.add('hide');
+    }
+}
+
+
+
+});
+
+
+
+
+

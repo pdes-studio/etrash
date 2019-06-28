@@ -49,7 +49,7 @@ body{
 }
 
 .hide{
-    visibility: hidden;
+    display: none !important;
 }
 
 .android-bar{
@@ -422,7 +422,7 @@ body{
         color: $branco;
         cursor: pointer;
         position: absolute;
-        z-index: 10;
+        z-index: 7;
         left: 0;
         right: 0;
 
@@ -543,6 +543,186 @@ body{
 
     }
 }
+
+.check-screen{
+    display: none;
+
+
+    &.act{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.4);
+    z-index: 9;
+    top: 0;
+
+
+    .modal{
+        height: 300px;
+        width: 300px;
+        background: $branco;
+        box-shadow: 0px 0px 3px rgba(0,0,0,.24);
+        border-radius: 10px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 10;
+
+        &.act{ 
+            background: $cor-principal;
+
+            .loading{
+                display: block;
+                position: relative;
+                padding: 60px 0;
+                text-align: center;
+    
+                .bar{
+                    display: block;
+                    height: 120px;
+                    width: 120px;
+                    border: 10px solid $branco;
+                    border-bottom-color: transparent;
+                    border-right-color: transparent;
+                    border-radius: 100%;
+                    margin: 0 auto;
+                    animation: loading 1.5s ease-out infinite;
+                }
+    
+                span{
+                    display: block;
+                    margin-top: 24px;
+                    color: $branco;
+                }
+            }
+    
+    
+            .sucess{
+                display: block;
+                position: relative;
+                padding: 60px 0;
+                text-align: center;
+    
+                .okay{
+                    display: block;
+                    height: 120px;
+                    width: 120px;
+                    background: url(../img/okay.svg) no-repeat;
+                    background-size: 65px;
+                    background-position: top center;
+                    margin: 0 auto;
+                    animation: sucesso 1.5s ease-out;
+                }
+    
+                span{
+                    display: block;
+                    margin-top: 36px;
+                    color: $branco;
+                }
+            }
+        }
+
+        .loading, .sucess{
+            display: none;
+        }
+        
+
+
+        form{
+            padding: 40px 0px;
+
+            .select{
+                display: flex;
+                max-width: 240px;
+                margin: 0 auto;
+                justify-content: space-between;
+                align-items: center;
+
+                select{
+                    height: 30px;
+                    padding: 5px 25px;
+                    font-size: 14px;
+                    border-color: rgba(66,133,244,.32);
+                }
+
+                
+            }
+
+
+            .area-de-texto{
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 240px;
+                margin: 24px auto;
+
+                span{
+                    text-align: center; 
+                    margin: 0 auto 12px auto;
+                }
+
+                textarea{
+                    height: 80px;
+                    width: 100%;
+                    border-color: rgba(66,133,244,.32);
+                    font-size: 14px;
+                    padding: 3px;
+                    line-height: 1.5em;
+                }
+
+            }
+
+
+            .btn-form{
+                display: flex;
+                justify-content: space-between;
+                max-width: 240px;
+                margin: 0 auto;
+
+                button{
+                    border: none;
+                    padding: 10px 26px;
+                    border-radius: 30px;
+                    background: $cor-bg-principal;
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+
+}
+
+}
+
+
+
+@keyframes loading{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+
+@keyframes sucesso{
+    from{
+        opacity: 0;
+    }
+
+
+    to{ 
+        opacity: 1;
+
+    }
+}
+
+
+
 
 .-g{ background-color: #2ecc71 !important;}
 .-o{ background-color: #e67e22 !important;}

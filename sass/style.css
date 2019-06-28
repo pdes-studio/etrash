@@ -50,7 +50,7 @@ body {
 }
 
 .hide {
-  visibility: hidden;
+  display: none !important;
 }
 
 .android-bar {
@@ -482,7 +482,7 @@ body {
   color: #fff;
   cursor: pointer;
   position: absolute;
-  z-index: 10;
+  z-index: 7;
   left: 0;
   right: 0;
 }
@@ -618,6 +618,202 @@ body {
   margin-right: 15px;
   background-color: rgba(255, 255, 255, 0);
   border: 2px solid #0072D6;
+}
+
+.check-screen {
+  display: none;
+}
+
+.check-screen.act {
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  top: 0;
+}
+
+.check-screen.act .modal {
+  height: 300px;
+  width: 300px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.check-screen.act .modal.act {
+  background: #0072D6;
+}
+
+.check-screen.act .modal.act .loading {
+  display: block;
+  position: relative;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.check-screen.act .modal.act .loading .bar {
+  display: block;
+  height: 120px;
+  width: 120px;
+  border: 10px solid #fff;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-radius: 100%;
+  margin: 0 auto;
+  -webkit-animation: loading 1.5s ease-out infinite;
+          animation: loading 1.5s ease-out infinite;
+}
+
+.check-screen.act .modal.act .loading span {
+  display: block;
+  margin-top: 24px;
+  color: #fff;
+}
+
+.check-screen.act .modal.act .sucess {
+  display: block;
+  position: relative;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.check-screen.act .modal.act .sucess .okay {
+  display: block;
+  height: 120px;
+  width: 120px;
+  background: url(../img/okay.svg) no-repeat;
+  background-size: 65px;
+  background-position: top center;
+  margin: 0 auto;
+  -webkit-animation: sucesso 1.5s ease-out;
+          animation: sucesso 1.5s ease-out;
+}
+
+.check-screen.act .modal.act .sucess span {
+  display: block;
+  margin-top: 36px;
+  color: #fff;
+}
+
+.check-screen.act .modal .loading, .check-screen.act .modal .sucess {
+  display: none;
+}
+
+.check-screen.act .modal form {
+  padding: 40px 0px;
+}
+
+.check-screen.act .modal form .select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 240px;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.check-screen.act .modal form .select select {
+  height: 30px;
+  padding: 5px 25px;
+  font-size: 14px;
+  border-color: rgba(66, 133, 244, 0.32);
+}
+
+.check-screen.act .modal form .area-de-texto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 240px;
+  margin: 24px auto;
+}
+
+.check-screen.act .modal form .area-de-texto span {
+  text-align: center;
+  margin: 0 auto 12px auto;
+}
+
+.check-screen.act .modal form .area-de-texto textarea {
+  height: 80px;
+  width: 100%;
+  border-color: rgba(66, 133, 244, 0.32);
+  font-size: 14px;
+  padding: 3px;
+  line-height: 1.5em;
+}
+
+.check-screen.act .modal form .btn-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.check-screen.act .modal form .btn-form button {
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  background: #CCE3F8;
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sucesso {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sucesso {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .-g {
